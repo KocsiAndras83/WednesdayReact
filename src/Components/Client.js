@@ -1,16 +1,15 @@
-import React, { useState } from "react";
-import "../../src/App.css";
-import Pets from "./Pets";
+import React from 'react';
 
-const Client = ({ client, fetchData }) => {
-  return (
-    <div className="Client">
-      <p>{client.name}</p>
-      {client.pets.map((pet, i) => (
-        <Pets key={i} pet={pet} fetchData={fetchData} />
-      ))}
-    </div>
-  );
-};
+import Pet from './Pet';
+
+function Client({ client }) {
+    return (
+        <div className="Client">
+            <p>{ client.name }</p>
+
+            { client.pets.map((pet, i) => (<Pet key={ i } pet={ pet } />)) }
+        </div>
+    );
+}
 
 export default Client;
